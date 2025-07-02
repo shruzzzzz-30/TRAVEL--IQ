@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Trip</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light grey background */
+            color: #333; /* Dark text for contrast */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .container {
+            padding: 30px 60px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+            background-color: #ffffff; /* White background for form */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            margin-top: 220px; /* Increase space above the container */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: rgb(144, 18, 18); /* Green color for title */
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-top: 10px;
+            display: block;
+            color: #555; /* Darker color for labels */
+        }
+
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9; /* Light background for inputs */
+            color: #333;
+        }
+
+        button {
+            background-color: rgb(94, 9, 9);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgb(202, 188, 188);
+        }
+
+        /* Styling for images */
+        .image-container {
+            position: absolute;
+            top: 10%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-container.right {
+            right: 5%; /* Position right images */
+            left: auto; /* Disable left positioning */
+        }
+
+        .image-container.left {
+            left: 5%; /* Position left images */
+            right: auto; /* Disable right positioning */
+        }
+
+        .image-container.top {
+            top: 5%; /* Adjust vertical position */
+            left: 50%;
+            transform: translateX(-50%);
+            flex-direction: row; /* Make images horizontal */
+            gap: 90px; /* Add spacing between images */
+        }
+
+        .image-container img {
+            width: 200px;  /* Increased width */
+            height: 200px; /* Increased height */
+            margin-bottom: 15px; /* Added margin to prevent images from touching */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 100px; /* Reduce margin for smaller screens */
+                padding: 20px 30px;
+            }
+
+            .image-container {
+                display: none; /* Hide images on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Image container on the right side -->
+    <div class="image-container right">
+        <img src="https://images.unsplash.com/photo-1524613032530-449a5d94c285?w=500&auto=format&fit=crop&q=60" alt="A scenic view of Taj Mahal">
+        <img src="https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?w=500&auto=format&fit=crop&q=60" alt="A German countryside landscape">
+        <img src="https://plus.unsplash.com/premium_photo-1671358446946-8bd43ba08a6a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    </div>
+
+    <!-- Image container on the left side -->
+    <div class="image-container left">
+        <img src="https://images.unsplash.com/photo-1713717857218-cb4727e87925?w=500&auto=format&fit=crop&q=60" alt="A Kerala backwater scene">
+        <img src="https://plus.unsplash.com/premium_photo-1719581957038-0121108b9455?w=500&auto=format&fit=crop&q=60" alt="A Paris street with Eiffel Tower">
+        <img src="https://images.unsplash.com/photo-1723573906681-1b436204a1a8?w=500&auto=format&fit=crop&q=60" alt="A scenic view of Karnatka hill station">
+    </div>
+    <div class="image-container top">
+        <img src="https://cdn.pixabay.com/photo/2021/12/22/22/41/bow-river-6888321_640.jpg" alt="A river in the mountains">
+        <img src="https://cdn.pixabay.com/photo/2022/02/15/13/00/building-7014904_1280.jpg" alt="A traditional building in Europe">
+        <img src="https://images.pexels.com/photos/29746525/pexels-photo-29746525/free-photo-of-snowy-mountain-path-in-manali-india.jpeg" alt="A snowy mountain path in Manali">
+    </div>
+
+    <!-- Form container -->
+    <div class="container">
+        <h1>Plan Your Dream Trip</h1>
+        <form action="{{ url_for('index') }}" method="POST">
+            <label for="destination">Destination:</label>
+            <input type="text" name="destination" required><br>
+            
+            <label for="duration">Duration (days):</label>
+            <input type="number" name="duration" required><br>
+            
+           
+            
+            <label for="budget">Budget:</label>
+            <input type="text" name="budget" required><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

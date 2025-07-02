@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVELIQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('https://cdn.pixabay.com/photo/2017/10/23/05/56/summer-2880261_960_720.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #ff5733;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c94324;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Optional: Add a semi-transparent overlay for better text visibility */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% transparency */
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div> <!-- Optional: overlay for better readability of text -->
+    <div class="content">
+        <h1>TRAVELIQ</h1>
+        <marquee>🌍 Ready to Explore the World? TRAVELIQ makes planning your dream vacation easier than ever! ✈️ Start your adventure today! 🌟</marquee>
+<a href="{{ url_for('index') }}">
+    <button>Plan Your Dream Vacation Now!</button>
+
+        </a>
+    </div>
+</body>
+</html>
