@@ -1,24 +1,26 @@
-# 🌐 Travel IQ – Smart Travel Companion
+# 🌍 Travel IQ – Python-Based Travel Assistant (No Database)
 
-**Travel IQ** is an intelligent web-based platform designed to enhance your travel experience by offering smart recommendations, real-time info, and location-based insights.
+**Travel IQ** is a lightweight Python application designed to assist travelers with real-time information using public APIs. No data is stored — all info is fetched live.
 
-## 🚀 Features
-- 🧠 AI-powered travel recommendations
-- 🗺️ Interactive map and nearby attractions
-- 🔍 Smart itinerary planner based on user interests
-- 💬 Multilingual support for global travelers
-- 📌 Saved destinations and user history tracking
+## ✨ Features
+- 🌦️ Get real-time weather updates for any city
+- 📍 Find top attractions in a given location
+- ✈️ Access basic travel recommendations through APIs
+- 🧠 Minimal and fast: No database, no signup, no storage
 
-## 💻 Tech Stack
-- Frontend: HTML5, CSS3, JavaScript
-- Backend: Node.js, Express.js
-- Database: MongoDB
-- APIs: Google Maps API, Weather API (optional)
+## 🧪 Tech Stack
+- **Language:** Python
+- **Framework:** Flask (for optional web interface)
+- **APIs Used:**
+  - OpenWeatherMap API (weather data)
+  - Google Places API or similar (attractions & location info)
 
-## 📌 Purpose
-To empower users with intelligent, personalized travel suggestions and real-time data for planning efficient and enjoyable trips.
+## 🔐 API Key Management
+- API keys are securely managed using `.env` files
+- Example:
+```python
+import os
+from dotenv import load_dotenv
 
-## 👩‍💻 Developed by: Shruthi M
-> A Computer Science student passionate about solving real-world problems with technology.
-
-🔗 [Check out my GitHub](https://github.com/shruzzzzz-30)
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
